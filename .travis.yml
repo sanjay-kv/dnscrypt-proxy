@@ -10,7 +10,7 @@ script:
 - cd dnscrypt-proxy
 
 - go clean
-- env GOOS=windows GOARCH=386 go build -ldflags="-s -w"
+- env GOOS=windows GOARCH=386 go build -x -ldflags="-s -w"
 - mkdir win32
 - ln dnscrypt-proxy.exe win32/
 - cp ../LICENSE example-dnscrypt-proxy.toml example-*.txt win32/
@@ -20,7 +20,7 @@ script:
 - zip -9 -r dnscrypt-proxy-win32-${TRAVIS_TAG:-dev}.zip win32
 
 - go clean
-- env GOOS=windows GOARCH=amd64 go build -ldflags="-s -w"
+- env GOOS=windows GOARCH=amd64 go build -x -ldflags="-s -w"
 - mkdir win64
 - ln dnscrypt-proxy.exe win64/
 - cp ../LICENSE example-dnscrypt-proxy.toml example-*.txt win64/
