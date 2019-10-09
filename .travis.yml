@@ -26,6 +26,7 @@ jobs:
         - GOOS=windows
         - GOARCH=386
       script:
+        - env
         - go build -x -ldflags="-s -w"
         - mkdir win32
         - ln dnscrypt-proxy.exe win32/
@@ -40,6 +41,7 @@ jobs:
         - GOOS=windows
         - GOARCH=amd64
       script:
+        - env
         - go build -x -ldflags="-s -w"
         - mkdir win64
         - ln dnscrypt-proxy.exe win64/
