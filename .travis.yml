@@ -11,7 +11,6 @@ env:
   global:
     - NDK_VER=r18
     - RELEASE_TAG="${TRAVIS_TAG:-dev}"
-    - secure: cuTXb4v5NwTr1XmkiHGkFir8fMiiBMnraCrls3thdDRlSTix0CiQc/H5Vh8SHauuG6VwVyrCT/Xsf0UQUmnULkPHjvuiNehb+bG4J3fz7hF94glBdQ8vxTuMmnHfJEYTQRLwCsWMBEC1wekw13O8J/0opFNG5neduns3Z1/rD5VSlBwgc8/4lomEp0fadIvzLeS7f5mxeXAD5Z9KBmc09uCjxVoF9Qsk1r901B0c0RMxIbJWyW9ZhDIVr/aEUN/tU0EXMKOA85sizg2moAigb8RZ1WCTh7utLGKpAyQegNk/unkksKMzZFkUCwHkrxlujwoe93wUS4rvZ+3nHMtLQdR+OfMeVs4/zvvQVq2f3bOXgkxgvhq6Bop0RK0xyEJffa5hUFbGNKhIFkLFLn1Ok28t2q7NOFPr0H2egHlkwgPztyhYMYb9C5PW4zd9buI0LS5452C4jXH5raBMfx844wTzaBbN689AKiYb84Qesqczss/o7eC7V48kh823dlZ/s2//gtp1ceqdAtNvp4dy7X/ECA/vNlpYisrtkR/CsFpJjGoTvS37leVMpmc5bn39dkoa5ZLliu7CaFRefbavcWWEImVStll9FBQ6+Ck9+41gczl9Rr7eGIV9ZZ/fmdkLNgxIpoAhZRee/dZD+/0gUExHxXXn10MqPuNVytVPiuU=
 
 before_script:
   - gimme --list
