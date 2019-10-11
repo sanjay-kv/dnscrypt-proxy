@@ -24,6 +24,9 @@ jobs:
       env:
         - GOOS=windows
         - GOARCH=386
+      before_install:
+        - export GOOS=windows
+        - export GOARCH=386
       script:
         - env
         - go build -x -ldflags="-s -w"
@@ -39,6 +42,9 @@ jobs:
       env:
         - GOOS=windows
         - GOARCH=amd64
+      before_install:
+        - export GOOS=windows
+        - export GOARCH=amd64
       script:
         - env
         - go build -x -ldflags="-s -w"
