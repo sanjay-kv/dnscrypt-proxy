@@ -53,8 +53,8 @@ func (handler localDoHHandler) ServeHTTP(writer http.ResponseWriter, request *ht
 	}
 	if len(packet) < MinDNSPacketSize {
 		writer.Header().Set("Content-Type", "text/plain")
-		writer.WriteHeader(400)
-		writer.Write([]byte("dnscrypt-proxy local DoH server\n"))
+		writer.WriteHeader(200)
+		writer.Write([]byte(""))
 		return
 	}
 	clientAddr, err := net.ResolveTCPAddr("tcp", request.RemoteAddr)

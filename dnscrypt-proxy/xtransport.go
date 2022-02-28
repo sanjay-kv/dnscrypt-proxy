@@ -3,11 +3,9 @@ package main
 import (
 	"bytes"
 	"context"
-	"crypto/sha512"
 	"crypto/tls"
 	"crypto/x509"
 	"encoding/base64"
-	"encoding/hex"
 	"errors"
 	"io"
 	"io/ioutil"
@@ -359,7 +357,7 @@ func (xTransport *XTransport) Fetch(method string, url *url.URL, accept string, 
 		timeout = xTransport.timeout
 	}
 	client := http.Client{Transport: xTransport.transport, Timeout: timeout}
-	header := map[string][]string{"User-Agent": {"dnscrypt-proxy"}}
+	header := map[string][]string{"User-Agent": {""}}
 	if len(accept) > 0 {
 		header["Accept"] = []string{accept}
 	}
@@ -368,9 +366,7 @@ func (xTransport *XTransport) Fetch(method string, url *url.URL, accept string, 
 	}
 	header["Cache-Control"] = []string{"max-stale"}
 	if body != nil {
-		h := sha512.Sum512(*body)
 		qs := url.Query()
-		qs.Add("body_hash", hex.EncodeToString(h[:32]))
 		url2 := *url
 		url2.RawQuery = qs.Encode()
 		url = &url2
